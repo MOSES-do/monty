@@ -71,7 +71,6 @@ int main(int argc, char *argv[])
 		glob.cont++;
 		parse_input(glob.buffer, glob.cont);
 	}
-	
 
 	fclose(fd);
 	deallocate();
