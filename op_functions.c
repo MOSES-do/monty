@@ -30,13 +30,6 @@ void _push(stack_t **head, unsigned int line_number)
 	}
 
 	n = atoi(glob.arg1);
-	if ((n < 0) || !n )
-	{
-		fprintf(stderr, "L%u: ", line_number);
-		fprintf(stderr, "usage: push integer\n");
-		free_glob();
-		exit(EXIT_FAILURE);
-	}
 	
 	add_dnodeint(head, n);
 }
