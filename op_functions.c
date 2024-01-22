@@ -87,7 +87,7 @@ void _pop(stack_t **head, unsigned int line_number)
 	if (*head == NULL || head == NULL)
 	{
 		fprintf(stderr, "L%u: ", line_number);
-		fprintf(stderr, "can't pint, stack empty\n");
+		fprintf(stderr, "can't pop, stack empty\n");
 		free_glob();
 		exit(EXIT_FAILURE);
 	}
