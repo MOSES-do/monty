@@ -10,10 +10,12 @@
 
 char *parse_input(char *args, unsigned int linecount)
 {
-	char *token, *tokens[2];
+	char *token, *tokens[2], *str;
 	size_t count = 0;
 	(void)linecount;
 
+	str = "pall";
+	
 	token = strtok(args, " \n\t");
 	while (token != NULL)
 	{
@@ -21,7 +23,12 @@ char *parse_input(char *args, unsigned int linecount)
 		token = strtok(NULL, " \n\t");
 	}
 	glob.arg = tokens[0];
-	glob.arg1 = tokens[1];
+	
+	if (strcmp(tokens[0], str) == 0)
+		*glob.arg1  = 0;
+	
+	glob.arg1 = tokens[1];	
+		
 	get_op_func(tokens[0])(&glob.head, glob.cont);
 	return (0);
 }

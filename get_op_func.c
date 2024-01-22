@@ -9,6 +9,8 @@
 void (*get_op_func(char *ops))(stack_t **, unsigned int)
 {
 	int i = 0;
+
+	
 	instruction_t arrOp[] = {
 		{"push", _push},
 		{"pall", _pall},
@@ -19,7 +21,7 @@ void (*get_op_func(char *ops))(stack_t **, unsigned int)
 		{"nop", _nop},
 		{NULL, NULL}
 	};
-
+	
 	for (i = 0; arrOp[i].opcode; i++)
 	{
 		if (strcmp(arrOp[i].opcode, ops) == 0)

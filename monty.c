@@ -44,7 +44,7 @@ FILE *open_file(int argc, char *argv[])
 
 	if (fd == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[0]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 
