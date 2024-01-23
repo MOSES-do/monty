@@ -9,32 +9,20 @@
 void _add(stack_t **head, unsigned int line_number)
 {
 	stack_t *curr;
-	int sum = 0, count = 0;
+	int sum = 0;
 
 	curr = *head;
 
-	while (curr)
-	{
-		count++;
-		curr = curr->next;
-	}
-
-	if (count < 2)
+	if (curr == NULL && curr->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		free_glob();
 		exit(EXIT_FAILURE);
 	}
-	while (curr->prev != NULL)
-	{
-		curr = curr->prev;
-	}
 	sum = curr->n + curr->next->n;
-	curr->next->next->prev = NULL;
-	*(head) = curr->next->next;
-	free(curr->next);
+	curr->next->n = sum;
+	*(head) = curr->next;
 	free(curr);
-	printf("%d\n", sum);
 }
 
 /**
